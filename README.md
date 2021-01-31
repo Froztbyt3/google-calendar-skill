@@ -1,26 +1,31 @@
-# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-alt.svg" card_color="#40DBB0" width="50" height="50" style="vertical-align:bottom"/> Google Calendar
-This skill will read your google calendar.
+# <img src='https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/    calendar.svg' card_color='#8140DB' width='50' height='50' style='vertical-align:bottom'/> 
+Check your google calendar appointments.
 
 ## About
-
+Fetches scheduled events from Google Calendar and supports the basics for adding events to the calendar.
 
 ## Examples
-* "Calendar"
-* "Meeting"
-* "What is my (calendar | meeting)"
+* "What's next on my calendar"
+* "What's on my calendar on thursday"
+* "Add have fun to my calendar at 7 in the evening on saturday"
 
 ## Credits
-Jules
+@forslund
 
 ## Category
-**Productivity**
-Information
-Daily
+**Daily**
 
 ## Tags
-#Google calendar
-#Meeting
-#Agenda
-#Calendar
-#Productivity
+#calendar
 
+
+## Setup
+To authorize access to your calendar:
+- Go to home.mycroft.ai and click on skills.
+- Scroll down to Google Calendar
+- Click "Connect"
+- Log into your Google account and authorize the skill
+
+## Troubleshooting
+
+Credentials stop working after an hour: This can occur if the authorization has been performed multiple times. You need to revoke the skill's access to your calendar. this can be done from https://myaccount.google.com/
