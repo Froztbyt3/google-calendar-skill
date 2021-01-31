@@ -1,1 +1,1 @@
-{{appointment}} at {{time}}. The temperature is {{temp}}.
+{{appointment}} at {{time}}. it's currently {{condition}} and {{temp}} degrees celcius at this event's location.

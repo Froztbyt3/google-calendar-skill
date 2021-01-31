@@ -17,7 +17,7 @@ import json
 from .mycroft_token_cred import MycroftTokenCredentials
 UTC_TZ = u'+00:00'
 
-OPWkey = ''
+OPWkey = 'afbd39e6a73ec1c5857e4ba2713ee211'
 
 
 def nice_time(dt, lang="en-us", speech=True, use_24hour=False,
@@ -197,21 +197,38 @@ class GoogleCalendarSkill(MycroftSkill):
                             'date': startdate}
                     self.speak_dialog('NextAppointmentWholeDay', data)
             elif d.date() == datetime.today().date():
-                data = {'appointment': event['summary'],
-                        'time': starttime}
-                self.speak_dialog('NextAppointment', data)
+                location = ''
+                data = {}
+                try:
+                    location = event['location']
+                    response = requests.get(
+                        'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric'.format(location, OPWkey))
+                    weatherData = response.json()
+                    temp = round(weatherData['main'].get('temp'))
+                    condition = weatherData['weather'][0].get('description')
+                    data = {'appointment': event['summary'],
+                            'time': starttime,
+                            'temp': temp,
+                            'condition': condition}
+                    self.speak_dialog('NextAppointmentWeather', data)
+                except:
+                    data = {'appointment': event['summary'],
+                            'time': starttime}
+                    self.speak_dialog('NextAppointment', data)
             elif is_tomorrow(d):
                 location = ''
                 data = {}
                 try:
                     location = event['location']
                     response = requests.get(
-                        'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'.format(location, OPWkey))
+                        'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric'.format(location, OPWkey))
                     weatherData = response.json()
-                    temp = weatherData['main'].get('temp')
+                    temp = round(weatherData['main'].get('temp'))
+                    condition = weatherData['weather'][0].get('description')
                     data = {'appointment': event['summary'],
                             'time': starttime,
-                            'temp': temp}
+                            'temp': temp,
+                            'condition': condition}
                     self.speak_dialog('NextAppointmentTomorrowWeather', data)
                 except:
                     data = {'appointment': event['summary'],
@@ -256,15 +273,17 @@ class GoogleCalendarSkill(MycroftSkill):
                         try:
                             location = e['location']
                             response = requests.get(
-                                'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'.format(location, OPWkey))
+                                'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric'.format(location, OPWkey))
                             weatherData = response.json()
-                            temp = weatherData['main'].get('temp')
+                            temp = round(weatherData['main'].get('temp'))
+                            condition = weatherData['weather'][0].get(
+                                'description')
                             data = {'appointment': e['summary'],
                                     'time': starttime,
-                                    'temp': temp}
+                                    'temp': temp,
+                                    'condition': condition}
                             self.speak_dialog('NextAppointmentWeather', data)
                         except:
-                            location = 'There is no weather data for this events location'
                             data = {'appointment': e['summary'],
                                     'time': starttime}
                             self.speak_dialog('NextAppointment', data)
