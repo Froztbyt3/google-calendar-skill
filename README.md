@@ -1,4 +1,4 @@
-# <img src='https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/    calendar.svg' card_color='#8140DB' width='50' height='50' style='vertical-align:bottom'/> 
+# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-day.svg" card_color="#222222" width="50" height="50" style="vertical-align:bottom"/>
 Check your google calendar appointments.
 Tells you the weather of your appointment's location
 
