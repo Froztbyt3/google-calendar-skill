@@ -1,23 +1,11 @@
 # <img src='https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/    calendar.svg' card_color='#8140DB' width='50' height='50' style='vertical-align:bottom'/> 
 Check your google calendar appointments.
-
-## About
-Fetches scheduled events from Google Calendar and supports the basics for adding events to the calendar.
+Tells you the weather of your appointment's location
 
 ## Examples
 * "What's next on my calendar"
 * "What's on my calendar on thursday"
 * "Add have fun to my calendar at 7 in the evening on saturday"
-
-## Credits
-@forslund
-
-## Category
-**Daily**
-
-## Tags
-#calendar
-
 
 ## Setup
 To authorize access to your calendar:
