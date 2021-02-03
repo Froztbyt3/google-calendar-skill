@@ -1,6 +1,6 @@
 # <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-day.svg" card_color="#222222" width="50" height="50" style="vertical-align:bottom"/>
 Check your google calendar appointments.
-Tells you the weather of your appointment's location
+Tells you the weather of your appointment's location, if the location is has been set in the appointment.
 
 ## Examples
 * "What's next on my calendar"
