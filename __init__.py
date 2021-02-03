@@ -17,7 +17,7 @@ import json
 from .mycroft_token_cred import MycroftTokenCredentials
 UTC_TZ = u'+00:00'
 
-OPWkey = 'afbd39e6a73ec1c5857e4ba2713ee211'
+OPWkey = 'xxxxx'
 
 
 def nice_time(dt, lang="en-us", speech=True, use_24hour=False,
